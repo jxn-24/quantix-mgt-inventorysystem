@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LowStockWarning from "./LowStockWarning";
 
 const ItemCard = ({ item }) => {
   const { id, name, category, quantity, price } = item;
@@ -10,6 +11,7 @@ const ItemCard = ({ item }) => {
       <p>Category: {category}</p>
       <p>Quantity: {quantity}</p>
       <p>Price: ${price.toFixed(2)}</p>
+      <LowStockWarning quantity={quantity} />
       <div style={styles.actions}>
         <Link to={`/details/${id}`} style={styles.link}>
           View
@@ -21,5 +23,7 @@ const ItemCard = ({ item }) => {
     </div>
   );
 };
+
+
 
 export default ItemCard;
