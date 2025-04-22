@@ -1,28 +1,39 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import ItemList from './pages/ItemList';
-import AddItem from './pages/AddItem';
-import EditItem from './pages/EditItem';
-import ItemDetails from './pages/ItemDetails';
-import LowStockItems from './pages/LowStockItems';
-import './styles/App.css';
+
+// Import page components from the 'pages/' directory
+import ItemList from './pages/ItemList'; // Page to display all inventory items
+import AddItem from './pages/AddItem'; // Page to add new inventory items
+import EditItem from './pages/EditItem'; // Page to edit existing inventory items
+import ItemDetails from './pages/ItemDetails'; // Page to view item details
+import LowStockItems from './pages/LowStockItems'; // Page to display low-stock items
 
 function App() {
+
   return (
     <Router>
-      <div className="app">
-        <Navbar />
-        <div className="content">
-          <Routes>
-            <Route path="/" element={<ItemList />} />
-            <Route path="/add" element={<AddItem />} />
-            <Route path="/edit/:id" element={<EditItem />} />
-            <Route path="/item/:id" element={<ItemDetails />} />
-            <Route path="/low-stock" element={<LowStockItems />} />
-          </Routes>
-        </div>
+      {/* Main Content Container */}
+      <div className="container mt-4">
+      
+        <Routes>
+          {/* Default Route: Item List Page */}
+          <Route path="/ItemList" element={<ItemList />} />
+
+          {/* Route for Adding New Items */}
+          <Route path="/Add" element={<AddItem />} />
+
+          {/* Route for Editing Existing Items */}
+          <Route path="/EditItem" element={<EditItem />} />
+
+          {/* Route for Viewing Item Details */}
+          <Route path="/ItemDetails" element={<ItemDetails />} />
+
+          {/* Route for Displaying Low-Stock Items */}
+          <Route path="/LowStockItems" element={<LowStockItems />} />
+        </Routes>
       </div>
     </Router>
+    
   );
 }
 
