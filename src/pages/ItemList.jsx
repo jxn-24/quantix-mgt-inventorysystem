@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import SearchBar from '../components/SearchBar';
-import ItemCard from '../components/ItemCard';
+
 
 function ItemList() {
   const [items, setItems] = useState([]);

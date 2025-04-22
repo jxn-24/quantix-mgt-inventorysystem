@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import ItemCard from '../components/ItemCard';
+
 
 function LowStockItems() {
   const [items, setItems] = useState([]);
