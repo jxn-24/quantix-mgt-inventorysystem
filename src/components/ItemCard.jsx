@@ -17,7 +17,6 @@ const ItemCard = ({ item }) => {
         <Link to={`/edit/${id}`} style={styles.link}>
           Edit
         </Link>
-        <></>
       </div>
     </div>
   );
