@@ -13,6 +13,27 @@
         "category": "Furniture",
         "quantity": 3,
         "price": 149.99
+      },
+      {
+        "id": 3,
+        "name": "Notebook",
+        "category": "Stationery",
+        "quantity": 50,
+        "price": 2.99
+      },
+      {
+        "id": 4,
+        "name": "Smartphone",
+        "category": "Electronics",
+        "quantity": 20,
+        "price": 699.99
+      },
+      {
+        "id": 5,
+        "name": "Desk Lamp",
+        "category": "Furniture",
+        "quantity": 5,
+        "price": 39.99
       }
     ]
   }

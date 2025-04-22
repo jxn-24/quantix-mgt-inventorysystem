@@ -1,11 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import ItemList from './pages/ItemList';
-import AddItem from './pages/AddItem';
-import EditItem from './pages/EditItem';
-import ItemDetails from './pages/ItemDetails';
-import LowStockItems from './pages/LowStockItems';
-import './styles/App.css';
+import './App.css';
 
 function App() {
   return (
