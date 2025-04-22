@@ -1,0 +1,18 @@
+{
+    "items": [
+      {
+        "id": 1,
+        "name": "Laptop",
+        "category": "Electronics",
+        "quantity": 10,
+        "price": 999.99
+      },
+      {
+        "id": 2,
+        "name": "Desk Chair",
+        "category": "Furniture",
+        "quantity": 3,
+        "price": 149.99
+      }
+    ]
+  }
