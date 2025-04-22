@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 const ItemCard = ({ item }) => {
   const { id, name, category, quantity, price } = item;
 
@@ -18,10 +17,10 @@ const ItemCard = ({ item }) => {
         <Link to={`/edit/${id}`} style={styles.link}>
           Edit
         </Link>
+        <></>
       </div>
     </div>
   );
 };
-
 
 export default ItemCard;
