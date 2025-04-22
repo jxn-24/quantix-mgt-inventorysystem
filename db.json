@@ -1,0 +1,6 @@
+{
+    "items": [
+      { "id": 1, "name": "Laptop", "category": "Electronics", "quantity": 3, "price": 999.99 },
+      { "id": 2, "name": "Chair", "category": "Furniture", "quantity": 10, "price": 50.0 }
+    ]
+  }
