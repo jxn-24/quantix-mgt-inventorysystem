@@ -8,24 +8,6 @@ import Navbar from "./components/Navbar";
 function Home() {
   const [count, setCount] = useState(0);
 
-  // return (
-  //   <>
-  //     <div>
-  //       <a href="https://vite.dev" target="_blank" rel="noreferrer">
-  //         <img src={viteLogo} className="logo" alt="Vite logo" />
-  //       </a>
-  //       <a href="https://react.dev" target="_blank" rel="noreferrer">
-  //         <img src={reactLogo} className="logo react" alt="React logo" />
-  //       </a>
-  //     </div>
-  //     <h1>Welcome to our App!</h1>
-  //     <div className="card">
-  //       <button onClick={() => setCount((count) => count + 1)}>
-  //         count is {count}
-  //       </button>
-  //     </div>
-  //   </>
-  // );
 }
 
 // About Page
@@ -33,7 +15,7 @@ function About() {
   return (
     <div>
       <h1>About Us</h1>
-      <p>We're a cool company doing awesome things with React!</p>
+      <p>We're a cool company doing awesome things (we diyeem tu)!</p>
     </div>
   );
 }
@@ -41,9 +23,7 @@ function About() {
 // Products Page
 function Products() {
   const [products] = useState([
-    { id: 1, name: "React T-Shirt", price: "$25" },
-    { id: 2, name: "Vite Hoodie", price: "$45" },
-    { id: 3, name: "JavaScript Mug", price: "$15" },
+  
   ]);
 
   return (
@@ -65,8 +45,8 @@ function Contact() {
   return (
     <div>
       <h1>Contact Us</h1>
-      <p>Email: contact@example.com</p>
-      <p>Phone: (123) 456-7890</p>
+      <p>Email: Inventory1915@gmail.com</p>
+      <p>Phone:+254798765432</p>
     </div>
   );
 }
