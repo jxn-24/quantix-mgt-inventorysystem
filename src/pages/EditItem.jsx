@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-// Mock data for inventory items
-const MOCK_ITEMS = [
-  { id: 1, name: 'Laptop', category: 'Electronics', quantity: 5, price: 999.99 },
-  { id: 2, name: 'Chair', category: 'Furniture', quantity: 10, price: 50.0 },
-  { id: 3, name: 'Headphones', category: 'Electronics', quantity: 2, price: 150.0 },
-  { id: 4, name: 'Desk', category: 'Furniture', quantity: 7, price: 200.0 },
-];
+
+
 
 function EditItem() {
   const { id } = useParams();
@@ -41,7 +36,7 @@ function EditItem() {
     console.log('Updating item:', formData);
 
     // Redirect to the Item List page after submission
-    navigate('/');
+    navigate('/ItemList');
   };
 
   return (

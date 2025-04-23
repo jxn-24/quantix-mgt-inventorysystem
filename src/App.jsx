@@ -9,14 +9,18 @@ import ItemDetails from './pages/ItemDetails'; // Page to view item details
 import LowStockItems from './pages/LowStockItems'; // Page to display low-stock items
 
 function App() {
-
   return (
-    <Router>
+    <Router
+      future={{
+        v7_startTransition: true, // Enable startTransition for React Router
+        v7_relativeSplatPath: true, // Enable relative splat paths
+      }}
+    >
       {/* Main Content Container */}
       <div className="container mt-4">
-      
         <Routes>
           {/* Default Route: Item List Page */}
+          
           <Route path="/ItemList" element={<ItemList />} />
 
           {/* Route for Adding New Items */}
@@ -33,7 +37,6 @@ function App() {
         </Routes>
       </div>
     </Router>
-    
   );
 }
 
