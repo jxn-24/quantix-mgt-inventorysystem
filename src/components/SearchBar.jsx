@@ -1,5 +1,4 @@
 import React from "react";
-import { styles } from "components.css";
 
 const SearchBar = ({ searchTerm, onSearchChange }) => {
   return (
@@ -8,7 +7,7 @@ const SearchBar = ({ searchTerm, onSearchChange }) => {
       placeholder="Search by name or category..."
       value={searchTerm}
       onChange={(e) => onSearchChange(e.target.value)}
-      style={styles.searchBar}
+      className="form-input mb-4"
     />
   );
 };

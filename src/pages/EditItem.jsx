@@ -40,81 +40,65 @@ function EditItem() {
   };
 
   return (
-    <div>
+    <div className="container">
+    <div className="card">
       <h2>Edit Item</h2>
       <form onSubmit={handleSubmit}>
-        {/* Name Field */}
-        <div className="mb-3">
-          <label htmlFor="name" className="form-label">
-            Name:
-          </label>
+        <div className="form-group">
+          <label className="form-label">Name:</label>
           <input
             type="text"
-            id="name"
+            className="form-input"
             name="name"
-            className="form-control"
             value={formData.name}
             onChange={handleChange}
             required
           />
         </div>
 
-        {/* Category Field */}
-        <div className="mb-3">
-          <label htmlFor="category" className="form-label">
-            Category:
-          </label>
+        <div className="form-group">
+          <label className="form-label">Category:</label>
           <input
             type="text"
-            id="category"
+            className="form-input"
             name="category"
-            className="form-control"
             value={formData.category}
             onChange={handleChange}
             required
           />
         </div>
 
-        {/* Quantity Field */}
-        <div className="mb-3">
-          <label htmlFor="quantity" className="form-label">
-            Quantity:
-          </label>
+        <div className="form-group">
+          <label className="form-label">Quantity:</label>
           <input
             type="number"
-            id="quantity"
+            className="form-input"
             name="quantity"
-            className="form-control"
             value={formData.quantity}
             onChange={handleChange}
             required
           />
         </div>
 
-        {/* Price Field */}
-        <div className="mb-3">
-          <label htmlFor="price" className="form-label">
-            Price:
-          </label>
+        <div className="form-group">
+          <label className="form-label">Price:</label>
           <input
             type="number"
+            className="form-input"
             step="0.01"
-            id="price"
             name="price"
-            className="form-control"
             value={formData.price}
             onChange={handleChange}
             required
           />
         </div>
 
-        {/* Submit Button */}
         <button type="submit" className="btn btn-primary">
           Save Changes
         </button>
       </form>
     </div>
-  );
+  </div>
+);
 }
-
 export default EditItem;

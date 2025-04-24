@@ -53,82 +53,84 @@ function AddItem() {
   };
 
   return (
-    <div>
+    <div className="container">
+    <div className="card">
       <h2>Add New Item</h2>
       <form onSubmit={handleSubmit}>
-        {/* Name Field */}
-        <div>
-          <label>Name:</label>
+        <div className="form-group">
+          <label className="form-label">Name:</label>
           <input
             type="text"
+            className="form-input"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
 
-        {/* Category Field */}
-        <div>
-          <label>Category:</label>
+        <div className="form-group">
+          <label className="form-label">Category:</label>
           <input
             type="text"
+            className="form-input"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             required
           />
         </div>
 
-        {/* Quantity Field */}
-        <div>
-          <label>Quantity:</label>
+        <div className="form-group">
+          <label className="form-label">Quantity:</label>
           <input
             type="number"
+            className="form-input"
             value={quantity}
             onChange={(e) => setQuantity(Number(e.target.value))}
-            min="1" // Ensure minimum value is 1
+            min="1"
             required
           />
         </div>
 
-        {/* Price Field */}
-        <div>
-          <label>Price:</label>
+        <div className="form-group">
+          <label className="form-label">Price:</label>
           <input
             type="number"
-            step="0.01" // Allow up to two decimal places
+            className="form-input"
+            step="0.01"
             value={price}
             onChange={(e) => setPrice(Number(e.target.value))}
-            min="0.01" // Ensure minimum value is 0.01
+            min="0.01"
             required
           />
         </div>
 
-        {/* Description Field */}
-        <div>
-          <label>Description:</label>
+        <div className="form-group">
+          <label className="form-label">Description:</label>
           <textarea
+            className="form-input"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
           />
         </div>
 
-        {/* Images Field */}
-        <div>
-          <label>Image URLs (comma-separated):</label>
+        <div className="form-group">
+          <label className="form-label">Image URLs (comma-separated):</label>
           <input
             type="text"
-            value={images.join(', ')} // Display images as a comma-separated string
+            className="form-input"
+            value={images.join(', ')}
             onChange={handleImagesChange}
             placeholder="Enter image URLs separated by commas"
           />
         </div>
 
-        {/* Submit Button */}
-        <button type="submit">Add Item</button>
+        <button type="submit" className="btn btn-primary mt-4">
+          Add Item
+        </button>
       </form>
     </div>
-  );
+  </div>
+);
 }
-
 export default AddItem;
