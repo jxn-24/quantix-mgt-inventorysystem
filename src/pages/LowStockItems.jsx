@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ItemCard from './ItemCard.jsx';
 
-// Mock data for inventory items
+
 const MOCK_ITEMS = [
   {
     id: 1,
@@ -128,7 +129,7 @@ const MOCK_ITEMS = [
 function LowStockItems() {
   const [lowStockItems, setLowStockItems] = useState([]);
   const [threshold, setThreshold] = useState(5); // Default low-stock threshold
-  const [filterCategory, setFilterCategory] = useState('All'); // Default filter is "All"
+  const [filterCategory, setFilterCategory] = useState('All'); 
 
   // Fetch and filter low-stock items based on the threshold and category
   useEffect(() => {
@@ -147,85 +148,50 @@ function LowStockItems() {
   }, [threshold, filterCategory]);
 
   return (
-    <div>
-      <h2>Low Stock Items</h2>
+    <div className="container">
+      <div className="card">
+        <h2>Low Stock Items</h2>
 
-      {/* Threshold Slider */}
-      <div className="mb-3">
-        <label htmlFor="threshold" className="form-label">
-          Set Low Stock Threshold: {threshold}
-        </label>
-        <input
-          type="range"
-          id="threshold"
-          min="1"
-          max="10"
-          value={threshold}
-          onChange={(e) => setThreshold(parseInt(e.target.value))}
-          className="form-range"
-        />
-      </div>
+        <div className="form-group">
+          <label className="form-label">Threshold: {threshold}</label>
+          <input
+            type="range"
+            className="form-input"
+            min="1"
+            max="10"
+            value={threshold}
+            onChange={(e) => setThreshold(parseInt(e.target.value))}
+          />
+        </div>
 
-      {/* Category Filter */}
-      <div className="mb-3">
-        <label htmlFor="filterCategory" className="form-label">
-          Filter By Category:
-        </label>
-        <select
-          id="filterCategory"
-          value={filterCategory}
-          onChange={(e) => setFilterCategory(e.target.value)}
-          className="form-select"
-        >
-          <option value="All">All</option>
-          <option value="Electronics">Electronics</option>
-          <option value="Furniture">Furniture</option>
-        </select>
-      </div>
+        <div className="form-group">
+          <label className="form-label">Filter Category:</label>
+          <select
+            className="form-input"
+            value={filterCategory}
+            onChange={(e) => setFilterCategory(e.target.value)}
+          >
+            <option value="All">All</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Furniture">Furniture</option>
+          </select>
+        </div>
 
-      {/* Display Low-Stock Items */}
-      <div className="row row-cols-1 row-cols-md-3 g-4">
-        {lowStockItems.length > 0 ? (
-          lowStockItems.map((item) => (
-            <div key={item.id} className="col">
-              <div className="card h-100">
-                {/* Image */}
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="card-img-top"
-                  onError={(e) => {
-                    e.target.src = '/images/default.jpg'; // Fallback image
-                  }}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{item.name}</h5>
-                  <p className="card-text">
-                    <strong>Category:</strong> {item.category}<br />
-                    <strong>Quantity:</strong>{' '}
-                    <span
-                      className={
-                        item.quantity <= 2 ? 'text-danger' : 'text-warning'
-                      }
-                    >
-                      {item.quantity}
-                    </span>
-                    <br />
-                    <strong>Price:</strong> ${item.price.toFixed(2)}
-                  </p>
-                  <Link to={`/item/${item.id}`} className="btn btn-primary">
-                    View Details
-                  </Link>
-                </div>
-              </div>
+        <div className="stats-grid">
+          {lowStockItems.length > 0 ? (
+            lowStockItems.map((item) => (
+              <ItemCard key={item.id} item={item} />
+            ))
+          ) : (
+            <div className="card">
+              <p>No low-stock items found.</p>
             </div>
-          ))
-        ) : (
-          <p>No low-stock items found.</p>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
 }
+
 
 export default LowStockItems;

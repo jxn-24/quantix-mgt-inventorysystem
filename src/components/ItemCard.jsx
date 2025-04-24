@@ -6,24 +6,22 @@ const ItemCard = ({ item }) => {
   const { id, name, category, quantity, price } = item;
 
   return (
-    <div style={styles.card}>
+    <div className="card">
       <h3>{name}</h3>
       <p>Category: {category}</p>
       <p>Quantity: {quantity}</p>
       <p>Price: ${price.toFixed(2)}</p>
       <LowStockWarning quantity={quantity} />
-      <div style={styles.actions}>
-        <Link to={`/details/${id}`} style={styles.link}>
+      <div className="flex gap-2 mt-4">
+        <Link to={`/details/${id}`} className="btn btn-primary">
           View
         </Link>
-        <Link to={`/edit/${id}`} style={styles.link}>
+        <Link to={`/edit/${id}`} className="btn">
           Edit
         </Link>
       </div>
     </div>
   );
 };
-
-
 
 export default ItemCard;

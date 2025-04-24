@@ -1,10 +1,11 @@
 import React from 'react';
 
 const LowStockWarning = ({ quantity }) => {
-  const isLowStock = quantity <= 5;
+  return quantity <= 5 ? (
+    <div className="alert alert-warning">
+      Low Stock Warning (≤5 items left)
+    </div>
+  ) : null;
+};
 
-  if (!isLowStock) return null;
-
-  return (
-    <div style={styles.warning}></div>
-  )}
+export default LowStockWarning;
