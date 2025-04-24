@@ -3,11 +3,15 @@ import { Routes, Route} from "react-router-dom"
 import ItemList from './pages/ItemList'
 import AddItem from './pages/AddItem'
 import EditItem from './pages/EditItem'
+import ItemDetails from './pages/ItemDetails'
+import LowStockItems from './pages/LowStockItems'
+
 
 function App() {
   return (
     <div className="app">
-      <NavBar />
+      
+      {/* <NavBar /> */}
       <div className="container">
         <Routes>
         <Route path="/" element={<ItemList />} />

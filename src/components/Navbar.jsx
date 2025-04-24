@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import React from "react";
+import "./app.css";
+
 
 function Navbar() {
   
@@ -13,8 +16,10 @@ function Navbar() {
       </nav>
     )
   }
+
+
   
-  export default Navbar
+  
 
 
 //const Navbar = () => {
@@ -35,5 +40,6 @@ function Navbar() {
         //</div>
       //</div>
     //</nav>
-  //);
-//};
+  
+
+export default Navbar
