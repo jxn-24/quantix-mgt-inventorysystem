@@ -1,5 +1,5 @@
 import { Routes, Route} from "react-router-dom"
-//import NavBar from "./components/NavBar"
+import Navbar from "./components/Navbar" 
 import ItemList from './pages/ItemList'
 import AddItem from './pages/AddItem'
 import EditItem from './pages/EditItem'
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="app">
       
-      {/* <NavBar /> */}
+      <Navbar />
       <div className="container">
         <Routes>
         <Route path="/" element={<ItemList />} />
@@ -22,6 +22,6 @@ function App() {
         </Routes>
         </div>
       </div>
-  )
+  );
 }
-export default App
+export default App;

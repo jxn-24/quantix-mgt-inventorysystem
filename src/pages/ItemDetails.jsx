@@ -1,22 +1,23 @@
-import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
-import axios from 'axios'
+import { useParams, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 
 function ItemDetails() {
   const { id } = useParams()
-  const [item, setItem] = useState(null)
+  const [item, setItem] = useState(null);
 
   useEffect(() => {
     const fetchItem = async () => {
       try {
         const response = await axios.get(`http://localhost:3000/items/${id}`)
-        setItem(response.data)
+        setItem(response.data);
       } catch (error) {
-        console.error('Error fetching item:', error)
+        console.error('Error fetching item:', error);
       }
-    }
+    };
     fetchItem()
-  }, [id])
+  }, [id]);
 
   if (!item) return <div>Loading...</div>
 
@@ -35,15 +36,15 @@ function ItemDetails() {
         </div>
         <div>
           <h3>Price</h3>
-          <p>${item.price.toFixed(2)}</p>
+          <p>Ksh.{item.price.toFixed(2)}</p>
         </div>
       </div>
       <div className="action-buttons">
-        <Link to="/" className="btn back-btn">Back to List</Link>
+        <Link to="/items" className="btn back-btn">Back to List</Link>
         <Link to={`/edit/${id}`} className="btn edit-btn">Edit Item</Link>
       </div>
     </div>
-  )
+  );
 }
 
-export default ItemDetails
+export default ItemDetails;
