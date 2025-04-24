@@ -1,46 +1,57 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import SearchBar from './SearchBar.jsx';
-import ItemCard from './ItemCard.jsx';
-
-// Mock data for inventory items
-
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import ItemCard from '../components/ItemCard'
 
 function ItemList() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredItems, setFilteredItems] = useState(MOCK_ITEMS);
+  const [items, setItems] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
 
-  // Handle search input changes
-  const handleSearch = (e) => {
-    const term = e.target.value.toLowerCase();
-    setSearchTerm(term);
-    const filtered = MOCK_ITEMS.filter(
-      (item) =>
-        item.name.toLowerCase().includes(term) ||
-        item.category.toLowerCase().includes(term)
-    );
-    setFilteredItems(filtered);
-  };
+  useEffect(() => {
+    fetchItems()
+  }, [])
+
+  const fetchItems = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/items')
+      setItems(response.data)
+    } catch (error) {
+      console.error('Error fetching items:', error)
+    }
+  }
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3000/items/${id}`)
+      fetchItems()
+    } catch (error) {
+      console.error('Error deleting item:', error)
+    }
+  }
+
+  const filteredItems = items.filter(item => 
+    item.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    item.category.toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
   return (
-    <div className="container">
-    <h2>Inventory Items</h2>
-    
-    <SearchBar searchTerm={searchTerm} onSearchChange={handleSearch} />
-
-    <div className="stats-grid">
-      {filteredItems.length > 0 ? (
-        filteredItems.map((item) => (
-          <ItemCard key={item.id} item={item} />
-        ))
-      ) : (
-        <div className="card">
-          <p>No items found matching "{searchTerm}".</p>
-        </div>
-      )}
+    <div className="item-list">
+      <h2>Inventory Items</h2>
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search by name or category..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+      <div className="items-grid">
+        {filteredItems.map(item => (
+          <ItemCard key={item.id} item={item} onDelete={handleDelete} />
+        ))}
+      </div>
     </div>
-  </div>
-);
+  )
 }
 
-export default ItemList;
+export default ItemList
