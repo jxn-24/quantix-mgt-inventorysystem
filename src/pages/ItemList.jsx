@@ -13,7 +13,7 @@ function ItemList() {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/items')
+      const response = await axios.get('https://inventory-mgt-jsonserver.vercel.app/items')
       setItems(response.data)
     } catch (error) {
       console.error('Error fetching items:', error)
@@ -22,7 +22,7 @@ function ItemList() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/items/${id}`)
+      await axios.delete(`https://inventory-mgt-jsonserver.vercel.app/items/${id}`)
       fetchItems()
     } catch (error) {
       console.error('Error deleting item:', error)

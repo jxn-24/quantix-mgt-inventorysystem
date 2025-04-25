@@ -23,7 +23,7 @@ function AddItem() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:3000/items', formData)
+      await axios.post('https://inventory-mgt-jsonserver.vercel.app/items', formData)
       navigate('/')
     } catch (error) {
       console.error('Error adding item:', error)

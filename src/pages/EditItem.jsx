@@ -16,7 +16,7 @@ function EditItem() {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/items/${id}`)
+        const response = await axios.get(`https://inventory-mgt-jsonserver.vercel.app/items/${id}`)
         setFormData(response.data)
       } catch (error) {
         console.error('Error fetching item:', error)
@@ -36,7 +36,7 @@ function EditItem() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.put(`http://localhost:3000/items/${id}`, formData)
+      await axios.put(`https://inventory-mgt-jsonserver.vercel.app/items/${id}`, formData)
       navigate(`/item/${id}`)
     } catch (error) {
       console.error('Error updating item:', error)

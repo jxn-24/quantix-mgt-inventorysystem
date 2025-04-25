@@ -13,7 +13,7 @@ function LowStockItems() {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/items')
+      const response = await axios.get('https://inventory-mgt-jsonserver.vercel.app/items')
       const lowStockItems = response.data.filter(item => item.quantity <= lowStockThreshold)
       setItems(lowStockItems)
     } catch (error) {
@@ -23,7 +23,7 @@ function LowStockItems() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/items/${id}`)
+      await axios.delete(`https://inventory-mgt-jsonserver.vercel.app/items/${id}`)
       fetchItems()
     } catch (error) {
       console.error('Error deleting item:', error)

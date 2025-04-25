@@ -10,7 +10,7 @@ function ItemDetails() {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/items/${id}`)
+        const response = await axios.get(`https://inventory-mgt-jsonserver.vercel.app/items/${id}`)
         setItem(response.data);
       } catch (error) {
         console.error('Error fetching item:', error);
