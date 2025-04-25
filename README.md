@@ -3,7 +3,7 @@ The Inventory Manager is a comprehensive React-based web application designed to
 
 ## Screenshot
 
-![Inventory Manager Screenshot](public/Screenshot from 2025-04-25 09-34-43.png)
+![Inventory Manager Screenshot] (./Screenshot from 2025-04-25 09-34-43.png)
 
 # Features
  ## Complete Inventory Management:
