@@ -1,12 +1,45 @@
-# React + Vite
+# Overview
+The Inventory Manager is a comprehensive React-based web application designed to help users track and manage inventory items. This application provides full CRUD (Create, Read, Update, Delete) functionality with additional features for searching and filtering inventory items.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Screenshot
 
-Currently, two official plugins are available:
+![Inventory Manager Screenshot](public/Screenshot from 2025-04-25 09-34-43.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Features
+ ## Complete Inventory Management:
+   1. Add new inventory items
+   2. View all items in a responsive grid
+   3. Edit existing items
+   4. Delete items when needed
 
-## Expanding the ESLint configuration
+ ## Advanced Filtering:
+   1. Search items by name or category
+   2. View low-stock items (quantity ≤ 5)
+   3. Real-time filtering as you type
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ ## User-Friendly Interface:
+
+   1. Clean, modern design
+   2. Responsive layout works on all device
+   3. Intuitive navigation
+
+ ## Data Persistence:
+   1. Mock backend using JSON Server
+   2. Persistent data storage
+   3. Instant updates across all views
+
+# Technologies Used
+  ## Frontend:
+    React 18
+    React Router 6
+    Axios for HTTP requests
+    CSS for styling
+
+  ## Backend:
+    JSON Server (mock REST API)
+    Local data storage (db.json)
+
+# Installation
+## Prerequisites
+   Node.js (v16 or higher recommended)
+   npm (comes with Node.js)
