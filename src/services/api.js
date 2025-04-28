@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/items';
+const API_URL = 'https://inventory-mgt-jsonserver.vercel.app/items';
 
 export const getItems = async () => {
   const response = await fetch(API_URL);

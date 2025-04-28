@@ -1,27 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import LowStockWarning from "./LowStockWarning";
+import { Link } from 'react-router-dom'
 
-const ItemCard = ({ item }) => {
-  const { id, name, category, quantity, price } = item;
-
+function ItemCard({ item, onDelete }) {
   return (
-    <div className="card">
-      <h3>{name}</h3>
-      <p>Category: {category}</p>
-      <p>Quantity: {quantity}</p>
-      <p>Price: ${price.toFixed(2)}</p>
-      <LowStockWarning quantity={quantity} />
-      <div className="flex gap-2 mt-4">
-        <Link to={`/details/${id}`} className="btn btn-primary">
-          View
-        </Link>
-        <Link to={`/edit/${id}`} className="btn">
-          Edit
-        </Link>
+    <div className="item-card">
+      <img src={item.image} alt={item.name} />
+      <h3>{item.name}</h3>
+      <p>Category: {item.category}</p>
+      <p>Quantity: {item.quantity}</p>
+      <p>Price: Ksh.{item.price.toFixed(2)}</p>
+      <div className="item-actions">
+        <Link to={`/item/${item.id}`} className="btn view-btn">View</Link>
+        <Link to={`/edit/${item.id}`} className="btn edit-btn">Edit</Link>
+        <button onClick={() => onDelete(item.id)} className="btn delete-btn">Delete</button>
       </div>
     </div>
   );
-};
+}
 
 export default ItemCard;
